@@ -64,6 +64,14 @@
     CodeMirror => CodeMirror.keyMap.default['Shift-Ctrl-1'] = function(){
          alert(eval(editor.getValue())); 
     });
+    
+    window.define('editor', function(){
+       return {
+          editor  : editor,
+          run     : e,
+          element : q
+       };
+    });
   }}));
   
       
