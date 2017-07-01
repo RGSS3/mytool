@@ -20,8 +20,14 @@
      let e = a(c('button'), {style:` 
         position: absolute;
         z-index: 10010;
-        right: 100px;
-        top: 100px;
+        right: 0px;
+        top: 0px;
+        border-radius: 0 0 0 4px;
+        border-left: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+        font-weight: bold;
+        font-size: 14px;
+        color: white;
       `,"innerText": "Run", onclick(){ eval(window.editor.getValue()); }});
      let q = b(a(c("div"), {style: `
           position: fixed; 
