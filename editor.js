@@ -33,17 +33,18 @@
           z-index: 10000; 
           border-radius: 4px; 
           border: 1px solid #ccc; 
-     `}));
+     `, "className": 'editor'}));
      q.appendChild(d);
      q.appendChild(e);
      
      b(a(c("style"), {"innerText": `
-         .CodeMirror {
+         .editor .CodeMirror {
               background: rgba(255, 255, 255, 0.6);
               font-size: 12px;
               font-family: consolas;
+              height: 100%;
          }
-
+         
      `}));
      r(['codemirror/lib/codemirror', 'codemirror/mode/javascript/javascript'], CM => 
         editor = CM.fromTextArea(d, {mode: 'javascript', lineNumbers: true})
