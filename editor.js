@@ -14,9 +14,17 @@
      });
      
      let d = a(c("textarea"), {height: "500"});
-     let q = b(a(c("div"), {style: "position: fixed; top: 100px; left: 100px; z-index: 10000;"}));
+     let e = a(c('button'), {"innerText": "Run", onclick(){ eval(window.editor.getValue()); }});
+     let q = b(a(c("div"), {style: `
+          position: fixed; 
+          top: 100px; 
+          left: 100px; 
+          z-index: 10000; 
+          border-radius: 4px; 
+          border: 1px solid #ccc; 
+     `}));
      q.appendChild(d);
-     let e = b(a(c('button'), {"innerText": "Run", onclick(){ eval(window.editor.getValue()); }}));
+     q.appendChild(e);
      r(['codemirror/lib/codemirror', 'codemirror/mode/javascript/javascript'], CM => 
         editor = CM.fromTextArea(d, {mode: 'javascript', lineNumbers: true})
      );
