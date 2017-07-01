@@ -13,7 +13,9 @@
        }
      });
      
-     let d = b(a(c("textarea"), {height: "500"}));
+     let d = a(c("textarea"), {height: "500"});
+     let q = b(a(c("div"), {style: "position: fixed; top: 100px; left: 100px;"}));
+     q.appendChild(d);
      let e = b(a(c('button'), {"innerText": "Run", onclick(){ eval(window.editor.getValue()); }}));
      r(['codemirror/lib/codemirror', 'codemirror/mode/javascript/javascript'], CM => 
         editor = CM.fromTextArea(d, {mode: 'javascript', lineNumbers: true})
