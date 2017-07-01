@@ -70,7 +70,7 @@
        };
     });
     
-    r(['editor', 'codemirror/lib/codemirror'], ({editor, run, element}, CodeMirror) => {
+    r(['https://unpkg.com/vue/dist/vue.min', 'editor', 'codemirror/lib/codemirror'], (Vue, {editor, run, element}, CodeMirror) => {
       let d = document.createElement("div");
       d.classList.add("widget");
       let e = document.createElement("style");
