@@ -25,10 +25,12 @@
         border-radius: 0 0 0 4px;
         border-left: 1px solid #ccc;
         border-bottom: 1px solid #ccc;
+        border-top: none;
+        border-right: none;
         font-weight: bold;
         font-size: 14px;
         color: white;
-        background: #00C0EE;
+        background: #1040FF;
       `,"innerText": "Run", onclick(){ eval(window.editor.getValue()); }});
      let q = b(a(c("div"), {style: `
           position: fixed; 
