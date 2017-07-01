@@ -13,8 +13,16 @@
        }
      });
      
-     let d = a(c("textarea"), {height: "500"});
-     let e = a(c('button'), {"innerText": "Run", onclick(){ eval(window.editor.getValue()); }});
+     let d = a(c("textarea"), {style: `
+        width: 100%;
+        height: 100%;
+     `});
+     let e = a(c('button'), {style:` 
+        position: absolute;
+        z-index: 10010;
+        right: 100px;
+        top: 100px;
+      `,"innerText": "Run", onclick(){ eval(window.editor.getValue()); }});
      let q = b(a(c("div"), {style: `
           position: fixed; 
           display: block;
