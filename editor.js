@@ -36,6 +36,15 @@
      `}));
      q.appendChild(d);
      q.appendChild(e);
+     
+     b(a(c("style"), {"innerText": `
+         .CodeMirror {
+              background: rgba(255, 255, 255, 0.6);
+              font-size: 12px;
+              font-family: consolas;
+         }
+
+     `}));
      r(['codemirror/lib/codemirror', 'codemirror/mode/javascript/javascript'], CM => 
         editor = CM.fromTextArea(d, {mode: 'javascript', lineNumbers: true})
      );
