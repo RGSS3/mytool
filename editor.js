@@ -60,6 +60,10 @@
      r(['codemirror/lib/codemirror', 'codemirror/mode/javascript/javascript'], CM => 
         editor = CM.fromTextArea(d, {mode: 'javascript', lineNumbers: true})
      );
+    r(['codemirror/lib/codemirror'], 
+    CodeMirror => CodeMirror.keyMap.default['Shift-Ctrl-1'] = function(){
+         alert(eval(editor.getValue())); 
+    });
   }}));
   
       
