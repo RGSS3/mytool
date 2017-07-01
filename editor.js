@@ -30,6 +30,7 @@
         font-weight: bold;
         font-size: 14px;
         color: white;
+        padding: 5px;
         background: #1040FF;
       `,"innerText": "Run", onclick(){ eval(window.editor.getValue()); }});
      let q = b(a(c("div"), {style: `
