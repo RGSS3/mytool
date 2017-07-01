@@ -28,6 +28,7 @@
         font-weight: bold;
         font-size: 14px;
         color: white;
+        background: #00C0EE;
       `,"innerText": "Run", onclick(){ eval(window.editor.getValue()); }});
      let q = b(a(c("div"), {style: `
           position: fixed; 
