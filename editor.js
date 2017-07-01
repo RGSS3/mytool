@@ -17,6 +17,9 @@
      let e = a(c('button'), {"innerText": "Run", onclick(){ eval(window.editor.getValue()); }});
      let q = b(a(c("div"), {style: `
           position: fixed; 
+          display: block;
+          width: 640px;
+          height: 480px;
           top: 100px; 
           left: 100px; 
           z-index: 10000; 
