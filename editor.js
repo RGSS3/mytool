@@ -58,21 +58,55 @@
          
      `}));
      r(['codemirror/lib/codemirror', 'codemirror/mode/javascript/javascript'], CM => 
-        editor = CM.fromTextArea(d, {mode: 'javascript', lineNumbers: true})
+        window.editor = CM.fromTextArea(d, {mode: 'javascript', lineNumbers: true})
      );
-    r(['codemirror/lib/codemirror'], 
-    CodeMirror => CodeMirror.keyMap.default['Shift-Ctrl-1'] = function(){
-         alert(eval(editor.getValue())); 
-    });
+  
     
     window.define('editor', function(){
        return {
-          editor  : editor,
+          editor  : window.editor,
           run     : e,
           element : q
        };
     });
+    
+    r(['editor', 'codemirror/lib/codemirror'], ({editor, run, element}, CodeMirror) => {
+      let d = document.createElement("div");
+      d.classList.add("widget");
+      let e = document.createElement("style");
+      e.innerHTML = `
+       .widget{
+        position: absolute;
+        z-index: 10020;
+        bottom: 0px;
+        right: 0px;
+        background: rgba(255, 255, 255, 0.8);
+        display: block;
+        }
+      `;
+      document.body.appendChild(e);
+      element.appendChild(d);
+      let app = new Vue({
+         template: `
+          <div class='widget'>
+            <H1>{{result}}</H1>
+          </div>
+          `,
+         data(){
+           return {
+             result: ""
+           }
+         },
+      }).$mount(d);
+
+      CodeMirror.keyMap.default['Shift-Ctrl-1'] = function(){
+         app.result = eval(window.editor.getValue()); 
+      }
+    });
   }}));
   
+ 
+
+
       
 })();
